@@ -264,15 +264,16 @@ Use removeArtist to do the following:
 5. Return the resulting copied array
 🌟 EXAMPLE: if removeArtist is invoked with the artists array and the number 0, it will return the resulting array with Amedeo Modigliani removed from our dataset. */
 
-let newArtists = []
-function removeArtist(arr, num) {
-  newArtists = [...arr]
-  for (let i =0; i < arr.length; i++){
-    arr.splice(num,1);
+function removeArtist(array, num) {
+  let filteredArray = [...array];
+  for (let i =0; i < array.length; i++){
+    if(array[i] === num){
+    filteredArray.splice(i,1);
   }
-    return newArtists;
 }
-
+    return filteredArray;
+}
+console.log('task 5:', removeArtist(artists, 3))
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -291,8 +292,11 @@ Use addArtist to do the following:
 5. Add the newly created object to the copied array, then return the copied array
 🌟 EXAMPLE: Invoking addArtist(artists, 'John Doe', '1988-2022', 'Full Stack Development', 'African American', 'I have a background in customer service at Big Retail Chain. I am attending BloomTech to become a Frontend Developer.') should return the artists array with the above object added to the end of the array. */
 
-function addArtist(/*Your Code Here*/) {
-  /*Your Code Here*/
+function addArtist(array, name, years, genre, nationality, bio) {
+  let copy = [...array];
+  const obj = {name, years, genre, nationality, bio};
+  copy.push(obj);
+  return copy;
 }
 
 
@@ -305,17 +309,16 @@ Use lotsOfArt to do the following:
 🌟 EXAMPLE: lotsOfArt(artists) will return ["Amedeo Modigliani", "Rene Magritte", ... "Albrecht Dürer"]
 */
 
-const prolificArtists = []
-function lotsOfArt(arr) {
-  for (let i = 0; i < arr.length; i++){
-    if(arr[i].paintings > 100){
-      prolificArtists.push(arr[i]);
-    }
+let result = []
+function lotsOfArt(array){
+  if(array.paintings > 100){
+    return true;
+  } else {
+    return false;
   }
-  return prolificArtists;
 }
-
-
+console.log('task 7:', lotsOfArt(artists));
+    
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 8: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Use artistInfo to do the following: 
@@ -347,11 +350,11 @@ Use artistByCountry to do the following:
 🌟 EXAMPLE: Invoking artistByCountry(artists, 'Spanish') will return: [ 'Salvador Dali', 'Pablo Picasso', 'Francisco Goya']
 */
 
-let artistOfCountry = []
-function artistByCountry(arr, str){
+let newArr = [];
+function artistByCountry(arr, string){
   for (let i = 0; i < arr.length; i++){
-    if(arr[i].nationality === str){
-      artistOfCountry.push(arr[i]);
+    if(arr[i].nationality === string){
+      newArr.push(arr[i].name);
     }
   }
 }
