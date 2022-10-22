@@ -210,7 +210,6 @@ Practice accessing data above by console.log-ing following items:
 //(1) Name of the first artist (0th index) in the array
 
 
-
 //(2) Bio of the third artist (2nd index) in the array 
 
 
@@ -230,10 +229,12 @@ Use getArtistByIndex to do the following:
 
 🌟 EXAMPLE: if getArtistByIndex is invoked with the artists array and the number 0, it will return `the artist at index 0 is Amedeo Modigliani` */
 
-function getArtistByIndex(/*Your Code Here*/) {
-  /*Your Code Here*/
+function getArtistByIndex(arr, num) {
+  for (let i =0; i < arr.length; i++){
+    return 'the artist at index ' + num + ' is ' + arr[num].name;
+    // return 'the artist at index ${j} is ${artists[j].name}';
+  }
 }
-
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -244,8 +245,12 @@ Use listOfNames to do the following:
 🌟 EXAMPLE of return: ["Amedeo Modigliani", "Vasiliy Kandinskiy", "Diego Rivera"....]
 */
 
-function listOfNames(/*Your Code Here*/) {
-  /*Your Code Here*/
+const names = []
+function listOfNames(arr) {
+  for (let i =0; i < arr. length; i++){
+    names.push(arr[i].name);
+  }
+    return names;
 }
 
 
