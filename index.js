@@ -304,16 +304,15 @@ Use lotsOfArt to do the following:
 */
 
 function lotsOfArt(array){
-  let prolificArtist = [...array]
+  let filteredArray = []
   for (let i = 0; i < array.length; i++){
     if(array[i].paintings > 100){
-      prolificArtist.push(array[i].name);
-    } else {
-      null
+      filteredArray.push(array[i].name);
+    } 
     }
+    return filteredArray;
   }
-  return prolificArtist;
-  }
+ 
  
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 8: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
