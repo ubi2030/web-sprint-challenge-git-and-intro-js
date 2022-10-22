@@ -309,16 +309,18 @@ Use lotsOfArt to do the following:
 🌟 EXAMPLE: lotsOfArt(artists) will return ["Amedeo Modigliani", "Rene Magritte", ... "Albrecht Dürer"]
 */
 
-let result = []
 function lotsOfArt(array){
-  if(array.paintings > 100){
-    return true;
-  } else {
-    return false;
+  let prolificArtist = [...array]
+  for (let i = 0; i < array.length; i++){
+    if(array[i].paintings > 100){
+      prolificArtist.push(array[i].name);
+    } else {
+      null
+    }
   }
-}
-console.log('task 7:', lotsOfArt(artists));
-    
+  return prolificArtist;
+  }
+ 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 8: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Use artistInfo to do the following: 
@@ -350,13 +352,14 @@ Use artistByCountry to do the following:
 🌟 EXAMPLE: Invoking artistByCountry(artists, 'Spanish') will return: [ 'Salvador Dali', 'Pablo Picasso', 'Francisco Goya']
 */
 
-let newArr = [];
-function artistByCountry(arr, string){
-  for (let i = 0; i < arr.length; i++){
-    if(arr[i].nationality === string){
-      newArr.push(arr[i].name);
+function artistByCountry(array, nationality){
+  let newArray = [];
+  for (let i = 0; i < array.length; i++){
+    if(array[i].nationality === nationality){
+      newArray.push(array[i].name);
     }
   }
+    return newArray;
 }
 
 
